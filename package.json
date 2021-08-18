@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "@create-figma-plugin/utilities": "^1.3.1"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "^1.3.1",
+    "@create-figma-plugin/tsconfig": "^1.3.1",
+    "@figma/plugin-typings": "^1",
+    "typescript": "^4"
+  },
+  "scripts": {
+    "build": "build-figma-plugin --typecheck --minify",
+    "watch": "build-figma-plugin --typecheck --watch"
+  },
+  "figma-plugin": {
+    "id": "svg-inserter",
+    "editorType": ["figma"],
+    "name": "SVG Inserter",
+    "main": "src/main.ts",
+    "parameters": [
+      {
+        "name": "Icon name",
+        "key": "icon-name",
+        "description": "enter the name of the icon you want to insert"
+      },
+      {
+        "name": "Size",
+        "key": "size",
+        "description": "enter the size of the icon you want to insert",
+        "allowFreeform": true
+      },
+      {
+        "name": "Color",
+        "key": "color",
+        "description": "enter the color of the icon you want to insert",
+        "allowFreeform": true,
+        "optional": true
+      }
+    ],
+    "parameterOnly": true
+  }
+}
